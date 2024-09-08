@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "trevorssentinels:block/grass_slab"
+    },
+    "type=double": {
+      "model": "trevorssentinels:block/overgrown_grass_block"
+    },
+    "type=top": {
+      "model": "trevorssentinels:block/grass_slab_top"
+    }
+  }
+}

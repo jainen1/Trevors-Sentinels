@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "trevorssentinels:block/caution_steel_block",
+      "x":90,
+      "y":90
+    },
+    "axis=y": {
+      "model": "trevorssentinels:block/caution_steel_block"
+    },
+    "axis=z": {
+      "model": "trevorssentinels:block/caution_steel_block",
+      "x": 90
+    }
+  }
+}

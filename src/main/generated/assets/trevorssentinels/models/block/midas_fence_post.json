@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "trevorssentinels:block/midas_planks"
+  }
+}

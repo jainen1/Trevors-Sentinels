@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "$": {
+      "item": "minecraft:ender_eye"
+    }
+  },
+  "pattern": [
+    "#",
+    "$",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "trevorssentinels:unholy_core"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "trevorssentinels:block/viridian_log",
+    "side": "trevorssentinels:block/viridian_log"
+  }
+}

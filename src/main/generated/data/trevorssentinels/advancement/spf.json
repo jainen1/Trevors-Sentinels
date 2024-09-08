@@ -1,0 +1,37 @@
+{
+  "parent": "trevorssentinels:trevorssentinels",
+  "criteria": {
+    "got_banana_boat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "trevorssentinels:viridian_boat"
+          },
+          {
+            "items": "trevorssentinels:viridian_chest_boat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "trevorssentinels:textures/block/steel_block.png",
+    "description": {
+      "translate": "advancements.trevorssentinels.spf.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "trevorssentinels:viridian_boat"
+    },
+    "title": {
+      "translate": "advancements.trevorssentinels.spf.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_banana_boat"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

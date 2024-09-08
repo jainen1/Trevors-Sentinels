@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "trevorssentinels:block/stripped_cerulii_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "trevorssentinels:block/stripped_cerulii_log"
+    },
+    "axis=z": {
+      "model": "trevorssentinels:block/stripped_cerulii_log_horizontal",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "trevorssentinels:starsteel_ingot"
+    },
+    "$": {
+      "item": "trevorssentinels:nuclear_ingot"
+    }
+  },
+  "pattern": [
+    "#  ",
+    " $ ",
+    "  #"
+  ],
+  "result": {
+    "count": 1,
+    "id": "trevorssentinels:plasma_cell"
+  }
+}

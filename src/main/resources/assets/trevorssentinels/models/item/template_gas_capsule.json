@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "trevorssentinels:item/gas_capsule",
+    "layer1": "trevorssentinels:item/gas_capsule_overlay"
+  }
+}

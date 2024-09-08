@@ -1,0 +1,8 @@
+{
+  "dynamic_book_name": {
+    "type": "translatable",
+    "translate": "trevorssentinels.holocodex.name"
+  },
+  "dynamic_book_model": "trevorssentinels:database",
+  "display_completion": true
+}

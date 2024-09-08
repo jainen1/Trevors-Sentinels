@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "trevorssentinels:block/end_stone_brick_column",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "trevorssentinels:block/end_stone_brick_column"
+    },
+    "axis=z": {
+      "model": "trevorssentinels:block/end_stone_brick_column",
+      "x": 90
+    }
+  }
+}

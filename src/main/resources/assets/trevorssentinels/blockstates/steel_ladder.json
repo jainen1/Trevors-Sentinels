@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "trevorssentinels:block/steel_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "trevorssentinels:block/steel_ladder"
+    },
+    "facing=south": {
+      "model": "trevorssentinels:block/steel_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "trevorssentinels:block/steel_ladder",
+      "y": 270
+    }
+  }
+}

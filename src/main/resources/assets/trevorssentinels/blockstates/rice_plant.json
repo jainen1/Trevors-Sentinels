@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "age=0": { "model": "trevorssentinels:block/rice0" },
+    "age=1": { "model": "trevorssentinels:block/rice1" },
+    "age=2": { "model": "trevorssentinels:block/rice2" },
+    "age=3": { "model": "trevorssentinels:block/rice3" },
+    "age=4": { "model": "trevorssentinels:block/rice4" },
+    "age=5": { "model": "trevorssentinels:block/rice5" },
+    "age=6": { "model": "trevorssentinels:block/rice6" },
+    "age=7": { "model": "trevorssentinels:block/rice7" }
+  }
+}

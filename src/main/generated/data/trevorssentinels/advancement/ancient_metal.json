@@ -1,0 +1,61 @@
+{
+  "parent": "trevorssentinels:trevorssentinels",
+  "criteria": {
+    "got_something": {
+      "conditions": {
+        "items": [
+          {
+            "items": "trevorssentinels:imperial_sword"
+          },
+          {
+            "items": "trevorssentinels:imperial_gladius"
+          },
+          {
+            "items": "trevorssentinels:imperial_pickaxe"
+          },
+          {
+            "items": "trevorssentinels:imperial_battleaxe"
+          },
+          {
+            "items": "trevorssentinels:imperial_shovel"
+          },
+          {
+            "items": "trevorssentinels:imperial_hoe"
+          },
+          {
+            "items": "trevorssentinels:imperial_helmet"
+          },
+          {
+            "items": "trevorssentinels:imperial_chestplate"
+          },
+          {
+            "items": "trevorssentinels:imperial_leggings"
+          },
+          {
+            "items": "trevorssentinels:imperial_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "trevorssentinels:textures/block/steel_block.png",
+    "description": {
+      "translate": "advancements.trevorssentinels.ancient_metal.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "trevorssentinels:imperial_alloy_ingot"
+    },
+    "title": {
+      "translate": "advancements.trevorssentinels.ancient_metal.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_something"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

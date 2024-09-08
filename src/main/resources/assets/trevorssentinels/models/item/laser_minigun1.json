@@ -1,0 +1,7 @@
+{
+  "credit": "Made with Blockbench by TrevorSkullcrftr",
+  "parent": "trevorssentinels:item/laser_minigun",
+  "textures": {
+    "1": "trevorssentinels:item/serenity_patriot"
+  }
+}

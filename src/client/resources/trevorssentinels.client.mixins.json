@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "net.trevorskullcrafter.mixin.client",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "AbstractInventoryScreenMixin",
+    "ClientPlayerEntityMixin",
+    "ExampleClientMixin",
+    "HandledScreenMixin",
+    "ScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}

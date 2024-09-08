@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/glow_lichen",
+  "textures": {
+    "particle": "trevorssentinels:block/flesh_veins",
+    "glow_lichen": "trevorssentinels:block/flesh_veins"
+  }
+}

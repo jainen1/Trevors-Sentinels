@@ -1,0 +1,20 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "trevorssentinels:item/galinite_lens"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "trevorssentinels:on": 0.5
+      },
+      "model": "trevorssentinels:item/galinite_lens2"
+    },
+    {
+      "predicate": {
+        "trevorssentinels:on": 1
+      },
+      "model": "trevorssentinels:item/galinite_lens3"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": [{ "model": "trevorssentinels:block/fancy_computer", "weight": 3},
+      {"model": "trevorssentinels:block/fancy_computer2", "weight": 3},
+      {"model": "trevorssentinels:block/fancy_computer3", "weight": 3}],
+    "facing=east": [{ "model": "trevorssentinels:block/fancy_computer", "weight": 3, "y": 90},
+      {"model": "trevorssentinels:block/fancy_computer2", "weight": 3, "y": 90},
+      {"model": "trevorssentinels:block/fancy_computer3", "weight": 3, "y": 90}],
+    "facing=south": [{ "model": "trevorssentinels:block/fancy_computer", "weight": 3, "y": 180},
+      {"model": "trevorssentinels:block/fancy_computer2", "weight": 3, "y": 180},
+      {"model": "trevorssentinels:block/fancy_computer3", "weight": 3, "y": 180}],
+    "facing=west": [{ "model": "trevorssentinels:block/fancy_computer", "weight": 3, "y": 270},
+      {"model": "trevorssentinels:block/fancy_computer2", "weight": 3, "y": 270},
+      {"model": "trevorssentinels:block/fancy_computer3", "weight": 3, "y": 270}]
+  }
+}

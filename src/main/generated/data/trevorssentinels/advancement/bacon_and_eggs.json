@@ -1,0 +1,44 @@
+{
+  "parent": "trevorssentinels:trevorssentinels",
+  "criteria": {
+    "eaten_bacon": {
+      "conditions": {
+        "item": {
+          "items": "trevorssentinels:dubious_bacon"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "eaten_egg": {
+      "conditions": {
+        "item": {
+          "items": "trevorssentinels:fried_egg"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "background": "trevorssentinels:textures/block/steel_block.png",
+    "description": {
+      "translate": "advancements.trevorssentinels.bacon_and_eggs.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "trevorssentinels:fried_egg"
+    },
+    "title": {
+      "translate": "advancements.trevorssentinels.bacon_and_eggs.title"
+    }
+  },
+  "requirements": [
+    [
+      "eaten_egg"
+    ],
+    [
+      "eaten_bacon"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

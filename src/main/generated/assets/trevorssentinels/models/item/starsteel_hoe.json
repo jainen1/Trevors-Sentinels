@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "trevorssentinels:item/starsteel_hoe"
+  }
+}

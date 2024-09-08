@@ -1,0 +1,9 @@
+{
+	"parent": "trevorssentinels:block/fancy_computer",
+	"textures": {
+		"main": "trevorssentinels:block/fancy_computer",
+		"center": "trevorssentinels:block/fancy_computer2_1",
+		"sides": "trevorssentinels:block/fancy_computer2_2",
+		"particle": "block/dark_oak_planks"
+	}
+}

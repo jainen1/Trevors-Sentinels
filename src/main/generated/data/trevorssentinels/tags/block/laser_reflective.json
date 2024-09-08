@@ -1,0 +1,24 @@
+{
+  "values": [
+    "minecraft:iron_block",
+    "minecraft:ice",
+    "minecraft:packed_ice",
+    "minecraft:blue_ice",
+    "minecraft:bell",
+    "trevorssentinels:starsteel_block",
+    "trevorssentinels:chiseled_starsteel_block",
+    "trevorssentinels:stainless_starsteel_block",
+    "trevorssentinels:starsteel_lamp",
+    "trevorssentinels:starsteel_fan",
+    "trevorssentinels:battery",
+    "trevorssentinels:fusebox",
+    "trevorssentinels:starsteel_ladder",
+    "trevorssentinels:big_red_button",
+    "trevorssentinels:big_red_plate",
+    "trevorssentinels:reconstruction_table",
+    "trevorssentinels:unholy_block",
+    "trevorssentinels:imperial_alloy_block",
+    "trevorssentinels:rose_gold_block",
+    "trevorssentinels:copper_iron_block"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "trevorssentinels:block/snowstone_slab"
+    },
+    "type=double": {
+      "model": "trevorssentinels:block/snowstone"
+    },
+    "type=top": {
+      "model": "trevorssentinels:block/snowstone_slab_top"
+    }
+  }
+}

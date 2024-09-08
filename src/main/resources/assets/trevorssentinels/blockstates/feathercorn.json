@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "trevorssentinels:block/feathercorn_bottom"
+    },
+    "half=upper": {
+      "model": "trevorssentinels:block/feathercorn_top"
+    }
+  }
+}

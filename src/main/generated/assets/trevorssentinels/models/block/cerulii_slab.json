@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "trevorssentinels:block/cerulii_planks",
+    "side": "trevorssentinels:block/cerulii_planks",
+    "top": "trevorssentinels:block/cerulii_planks"
+  }
+}

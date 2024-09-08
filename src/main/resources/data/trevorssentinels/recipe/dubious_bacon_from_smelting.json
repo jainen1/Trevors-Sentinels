@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 300,
+  "experience": 0.40,
+  "ingredient": {
+    "item": "trevorssentinels:flesh_veins"
+  },
+  "result": "trevorssentinels:dubious_bacon"
+}

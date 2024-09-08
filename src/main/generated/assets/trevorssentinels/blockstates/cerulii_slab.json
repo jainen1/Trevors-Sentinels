@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "trevorssentinels:block/cerulii_slab"
+    },
+    "type=double": {
+      "model": "trevorssentinels:block/cerulii_planks"
+    },
+    "type=top": {
+      "model": "trevorssentinels:block/cerulii_slab_top"
+    }
+  }
+}

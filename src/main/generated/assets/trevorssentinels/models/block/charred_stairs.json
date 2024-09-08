@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "trevorssentinels:block/charred_planks",
+    "side": "trevorssentinels:block/charred_planks",
+    "top": "trevorssentinels:block/charred_planks"
+  }
+}

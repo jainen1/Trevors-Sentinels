@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "trevorssentinels:block/stripped_midas_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "trevorssentinels:block/stripped_midas_wood"
+    },
+    "axis=z": {
+      "model": "trevorssentinels:block/stripped_midas_wood",
+      "x": 90
+    }
+  }
+}

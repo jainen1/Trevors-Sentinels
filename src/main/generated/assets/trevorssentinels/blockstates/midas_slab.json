@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "trevorssentinels:block/midas_slab"
+    },
+    "type=double": {
+      "model": "trevorssentinels:block/midas_planks"
+    },
+    "type=top": {
+      "model": "trevorssentinels:block/midas_slab_top"
+    }
+  }
+}

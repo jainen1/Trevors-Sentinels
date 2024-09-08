@@ -1,0 +1,47 @@
+{
+  "definitions": [
+    {
+      "image": "trevorssentinels:textures/gui/tooltip_borders.png",
+      "index": 0,
+      "startColor": "#47fa0c",
+      "endColor": "#47fa0c",
+      "bgStartColor": "#1d2c19-a25",
+      "bgEndColor": "#10160E-a25",
+      "priority": 3,
+      "selectors": [ "trevorssentinels:nuclear_ingot", "trevorssentinels:nuclear_block", "trevorssentinels:nuclear_rocket", "trevorssentinels:nuclear_helmet",
+        "trevorssentinels:nuclear_chestplate", "trevorssentinels:nuclear_leggings", "trevorssentinels:nuclear_boots", "trevorssentinels:nuclear_sword",
+        "trevorssentinels:nuclear_phaser", "trevorssentinels:nuclear_vibroknife", "trevorssentinels:nuclear_drill", "trevorssentinels:nuclear_axe",
+        "trevorssentinels:nuclear_shovel", "trevorssentinels:nuclear_hoe" ]
+    },
+    {
+      "image": "trevorssentinels:textures/gui/tooltip_borders.png",
+      "index": 1,
+      "startColor": "#622019",
+      "endColor": "#622019",
+      "bgStartColor": "#2a0b07-a25",
+      "bgEndColor": "1_#2f1c08-a30_#4c2803-a25",
+      "priority": 3,
+      "selectors": [ "trevorssentinels:flesh_block", "trevorssentinels:flesh_veins", "trevorssentinels:fleshy_eye",
+        "trevorssentinels:ruinous_gaze", "trevorssentinels:dubious_bacon", "trevorssentinels:vile_spitter", "trevorssentinels:meat_pellet" ]
+    },
+    {
+      "image": "trevorssentinels:textures/gui/tooltip_borders.png",
+      "index": 7,
+      "startColor": "#622019",
+      "endColor": "#622019",
+      "bgStartColor": "#2a0b07-a25",
+      "bgEndColor": "1_#2f1c08-a30_#4c2803-a25",
+      "priority": 3,
+      "selectors": [ "%Scrap Metal" ]
+    },
+    {
+      "image": "trevorssentinels:textures/gui/tooltip_borders.png",
+      "index": 4,
+      "startColor": "24_#FF008FCC-v25_#FF008FCC+s25+v85",
+      "endColor": "24_#FF044B8A-v30_#FF044B8A+s25+v55",
+      "bgStartColor": "#D0008FCC-v160",
+      "bgEndColor": "#F8044B8A-v75",
+      "selectors": ["sea_lantern", "heart_of_the_sea", "%Prismarine", "conduit", "nautilus_shell"]
+    }
+  ]
+}

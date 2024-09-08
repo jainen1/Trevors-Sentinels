@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "trevorssentinels:block/viridian_door_bottom",
+    "top": "trevorssentinels:block/viridian_door_top"
+  }
+}

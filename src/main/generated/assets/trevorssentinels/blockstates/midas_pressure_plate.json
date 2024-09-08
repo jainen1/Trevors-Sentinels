@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "trevorssentinels:block/midas_pressure_plate"
+    },
+    "powered=true": {
+      "model": "trevorssentinels:block/midas_pressure_plate_down"
+    }
+  }
+}

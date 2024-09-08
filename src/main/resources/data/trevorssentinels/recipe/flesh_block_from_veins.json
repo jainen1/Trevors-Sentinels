@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "blocks",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "trevorssentinels:flesh_veins"
+    }
+  },
+  "result": {
+    "item": "trevorssentinels:flesh_block"
+  }
+}

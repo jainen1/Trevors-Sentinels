@@ -1,0 +1,9 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "front": "trevorssentinels:block/forge_front_on",
+    "side": "trevorssentinels:block/forge_side",
+    "top": "trevorssentinels:block/forge_top",
+    "bottom": "minecraft:block/furnace_top"
+  }
+}

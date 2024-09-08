@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "trevorssentinels:block/fusebox" },
+    "facing=east": { "model": "trevorssentinels:block/fusebox", "y": 90 },
+    "facing=south": { "model": "trevorssentinels:block/fusebox", "y": 180 },
+    "facing=west": { "model": "trevorssentinels:block/fusebox", "y": 270 }
+  }
+}

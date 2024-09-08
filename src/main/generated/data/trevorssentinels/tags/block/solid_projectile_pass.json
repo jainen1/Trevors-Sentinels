@@ -1,0 +1,10 @@
+{
+  "values": [
+    {
+      "id": "#minecraft:leaves",
+      "required": false
+    },
+    "minecraft:iron_bars",
+    "minecraft:chain"
+  ]
+}

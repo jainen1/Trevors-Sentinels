@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "trevorssentinels:block/steel_block",
+    "side": "trevorssentinels:block/caution_steel_block"
+  }
+}

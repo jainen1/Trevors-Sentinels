@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ash": {
+      "conditions": {
+        "items": [
+          {
+            "items": "trevorssentinels:ash"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:iron_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "trevorssentinels:darksteel_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tranquil_dust": {
+      "conditions": {
+        "items": [
+          {
+            "items": "trevorssentinels:tranquil_dust"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tranquil_dust",
+      "has_ash",
+      "has_iron_ingot"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "trevorssentinels:darksteel_ingot"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "trevorssentinels:phaser_projectile",
+    "trevorssentinels:shard_projectile",
+    "trevorssentinels:dagger_projectile"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "trevorssentinels:galinite_block"
+    }
+  ],
+  "result": {
+    "item": "trevorssentinels:galinite_shard",
+    "count": 9
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "trevorssentinels:block/smooth_snowstone",
+    "side": "trevorssentinels:block/cut_snowstone"
+  }
+}

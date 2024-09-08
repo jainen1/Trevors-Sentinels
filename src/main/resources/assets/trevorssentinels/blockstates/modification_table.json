@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "trevorssentinels:block/modification_table" },
+    "facing=east": { "model": "trevorssentinels:block/modification_table", "y": 90 },
+    "facing=south": { "model": "trevorssentinels:block/modification_table", "y": 180 },
+    "facing=west": { "model": "trevorssentinels:block/modification_table", "y": 270 }
+  }
+}

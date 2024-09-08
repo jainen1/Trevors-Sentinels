@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "clicked=false": {
+      "model": "trevorssentinels:block/steel_lamp_block"
+    },
+    "clicked=true": {
+      "model": "trevorssentinels:block/steel_lamp_block_on"
+    }
+  }
+}

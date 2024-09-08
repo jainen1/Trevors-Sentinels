@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "trevorssentinels:flesh_block"
+    },
+    {
+      "item": "trevorssentinels:ruinous_gaze"
+    }
+  ],
+  "result": {
+    "item": "trevorssentinels:fleshy_eye"
+  }
+}

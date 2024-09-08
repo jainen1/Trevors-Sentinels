@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "trevorssentinels:block/steel_lamp_on"
+  }
+}

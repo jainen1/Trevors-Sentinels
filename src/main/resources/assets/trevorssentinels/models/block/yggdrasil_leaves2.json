@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "trevorssentinels:block/white_yggdrasil_leaves"
+  }
+}

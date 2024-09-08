@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "$"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:sand"
+    },
+    "$": {
+      "item": "minecraft:water_bucket"
+    }
+  },
+  "result": {
+    "item": "trevorssentinels:quicksand_bucket"
+  }
+}

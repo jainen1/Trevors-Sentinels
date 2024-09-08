@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "trevorssentinels:empty_can"
+    }
+  ],
+  "result": {
+    "item": "trevorssentinels:steel_ingot",
+    "count": 2
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "values": [
+    {
+      "id": "#c:glass_blocks",
+      "required": false
+    },
+    "#trevorssentinels:solid_projectile_pass"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "trevorssentinels:block/viridian_planks",
+    "side": "trevorssentinels:block/viridian_planks",
+    "top": "trevorssentinels:block/viridian_planks"
+  }
+}

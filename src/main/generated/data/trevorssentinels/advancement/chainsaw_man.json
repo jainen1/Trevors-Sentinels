@@ -1,0 +1,35 @@
+{
+  "parent": "trevorssentinels:trevorssentinels",
+  "criteria": {
+    "got_chainsaw": {
+      "conditions": {
+        "items": [
+          {
+            "items": "trevorssentinels:scrap_metal_chainsaw"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "trevorssentinels:textures/block/steel_block.png",
+    "description": {
+      "translate": "advancements.trevorssentinels.chainsaw_man.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "trevorssentinels:scrap_metal_chainsaw"
+    },
+    "title": {
+      "translate": "advancements.trevorssentinels.chainsaw_man.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_chainsaw"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

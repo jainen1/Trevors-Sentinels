@@ -1,0 +1,17 @@
+{
+  "type": "patchouli:shaped_book_recipe",
+  "pattern": [
+    "  #",
+    " $ ",
+    "#  "
+  ],
+  "key": {
+    "#": {
+      "item": "trevorssentinels:steel_ingot"
+    },
+    "$": {
+      "item": "trevorssentinels:energy_cell"
+    }
+  },
+  "book": "trevorssentinels:lens_database"
+}

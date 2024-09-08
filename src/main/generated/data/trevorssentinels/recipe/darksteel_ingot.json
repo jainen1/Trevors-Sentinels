@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "trevorssentinels:tranquil_dust"
+    },
+    {
+      "item": "trevorssentinels:tranquil_dust"
+    },
+    {
+      "item": "trevorssentinels:tranquil_dust"
+    },
+    {
+      "item": "trevorssentinels:tranquil_dust"
+    },
+    {
+      "item": "trevorssentinels:ash"
+    },
+    {
+      "item": "trevorssentinels:ash"
+    },
+    {
+      "item": "trevorssentinels:ash"
+    },
+    {
+      "item": "trevorssentinels:ash"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "trevorssentinels:unholy_ingot"
+  }
+}

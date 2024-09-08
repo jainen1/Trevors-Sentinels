@@ -1,0 +1,26 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "trevorssentinels:item/tracker_black"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "trevorssentinels:model": 0.5
+      },
+      "model": "trevorssentinels:item/tracker_green"
+    },
+    {
+      "predicate": {
+        "trevorssentinels:model": 0.7
+      },
+      "model": "trevorssentinels:item/tracker_yellow"
+    },
+    {
+      "predicate": {
+        "trevorssentinels:model": 1
+      },
+      "model": "trevorssentinels:item/tracker_red"
+    }
+  ]
+}

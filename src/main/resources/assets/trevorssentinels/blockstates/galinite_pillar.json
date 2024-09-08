@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "trevorssentinels:block/galinite_pillar",
+      "x":90,
+      "y":90
+    },
+    "axis=y": {
+      "model": "trevorssentinels:block/galinite_pillar"
+    },
+    "axis=z": {
+      "model": "trevorssentinels:block/galinite_pillar",
+      "x": 90
+    }
+  }
+}

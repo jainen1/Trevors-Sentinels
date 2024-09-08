@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "trevorssentinels:block/charred_planks",
+    "side": "trevorssentinels:block/charred_planks",
+    "top": "trevorssentinels:block/charred_planks"
+  }
+}

@@ -1,0 +1,13 @@
+{
+    "pack": {
+        "description": "Adds extra things to the game!",
+        "pack_format": 22
+    },
+    "language": {
+        "en_thanatu": {
+            "name": "English",
+            "region": "The Nether",
+            "bidirectional": false
+        }
+    }
+}

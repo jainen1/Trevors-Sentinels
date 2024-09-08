@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "trevorssentinels:block/pale_slab"
+    },
+    "type=double": {
+      "model": "trevorssentinels:block/pale_planks"
+    },
+    "type=top": {
+      "model": "trevorssentinels:block/pale_slab_top"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "trevorssentinels:block/orange_agility_block"
+  }
+}

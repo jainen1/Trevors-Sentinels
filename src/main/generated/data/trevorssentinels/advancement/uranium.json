@@ -1,0 +1,35 @@
+{
+  "parent": "trevorssentinels:cerberus",
+  "criteria": {
+    "got_cube": {
+      "conditions": {
+        "items": [
+          {
+            "items": "trevorssentinels:nuclear_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "trevorssentinels:textures/block/steel_block.png",
+    "description": {
+      "translate": "advancements.trevorssentinels.uranium.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "trevorssentinels:nuclear_ingot"
+    },
+    "title": {
+      "translate": "advancements.trevorssentinels.uranium.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_cube"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "trevorssentinels:block/midas_log",
+    "side": "trevorssentinels:block/midas_log"
+  }
+}

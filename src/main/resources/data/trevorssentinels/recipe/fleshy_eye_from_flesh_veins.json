@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#$#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "trevorssentinels:flesh_veins"
+    },
+    "$": {
+      "item": "trevorssentinels:ruinous_gaze"
+    }
+  },
+  "result": {
+    "item": "trevorssentinels:fleshy_eye"
+  }
+}

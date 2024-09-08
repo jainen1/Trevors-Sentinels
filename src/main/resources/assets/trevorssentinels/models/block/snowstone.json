@@ -1,0 +1,9 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "front": "trevorssentinels:block/snowstone",
+    "side": "trevorssentinels:block/snowstone",
+    "top": "trevorssentinels:block/smooth_snowstone",
+    "bottom": "trevorssentinels:block/snowstone_bottom"
+  }
+}

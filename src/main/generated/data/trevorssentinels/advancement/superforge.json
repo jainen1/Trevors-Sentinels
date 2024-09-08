@@ -1,0 +1,35 @@
+{
+  "parent": "trevorssentinels:uranium",
+  "criteria": {
+    "got_superforge": {
+      "conditions": {
+        "items": [
+          {
+            "items": "trevorssentinels:reconstruction_table"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "trevorssentinels:textures/block/steel_block.png",
+    "description": {
+      "translate": "advancements.trevorssentinels.superforge.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "trevorssentinels:reconstruction_table"
+    },
+    "title": {
+      "translate": "advancements.trevorssentinels.superforge.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_superforge"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "clicked=false,facing=north": {
+      "model": "trevorssentinels:block/fleshy_eye"
+    },
+    "clicked=true,facing=north": {
+      "model": "trevorssentinels:block/fleshy_eye_on"
+    },
+    "clicked=false,facing=east": {
+      "model": "trevorssentinels:block/fleshy_eye", "y": 90
+    },
+    "clicked=true,facing=east": {
+      "model": "trevorssentinels:block/fleshy_eye_on", "y": 90
+    },
+    "clicked=false,facing=south": {
+      "model": "trevorssentinels:block/fleshy_eye", "y": 180
+    },
+    "clicked=true,facing=south": {
+      "model": "trevorssentinels:block/fleshy_eye_on", "y": 180
+    },
+    "clicked=false,facing=west": {
+      "model": "trevorssentinels:block/fleshy_eye", "y": 270
+    },
+    "clicked=true,facing=west": {
+      "model": "trevorssentinels:block/fleshy_eye_on", "y": 270
+    },
+    "clicked=false,facing=up": {
+      "model": "trevorssentinels:block/fleshy_eye", "x": 270
+    },
+    "clicked=true,facing=up": {
+      "model": "trevorssentinels:block/fleshy_eye_on", "x": 270
+    },
+    "clicked=false,facing=down": {
+      "model": "trevorssentinels:block/fleshy_eye", "x": 90
+    },
+    "clicked=true,facing=down": {
+      "model": "trevorssentinels:block/fleshy_eye_on", "x": 90
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "trevorssentinels:tranquil_rose"
+    }
+  ],
+  "result": {
+    "item": "trevorssentinels:tranquil_dust",
+    "count": 2
+  }
+}

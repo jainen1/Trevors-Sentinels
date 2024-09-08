@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "got_scrap_metal_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "trevorssentinels:scrap_metal_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "trevorssentinels:textures/block/steel_block.png",
+    "description": {
+      "translate": "advancements.trevorssentinels.trevorssentinels.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "trevorssentinels:scrap_metal_shard"
+    },
+    "title": {
+      "translate": "advancements.trevorssentinels.trevorssentinels.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_scrap_metal_shard"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "trevorssentinels:grant_database"
+    ]
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "###",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "trevorssentinels:steel_ingot"
+    }
+  },
+  "result": {
+    "item": "trevorssentinels:steel_ladder",
+    "count": 3
+  }
+}

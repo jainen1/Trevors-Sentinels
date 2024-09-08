@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "trevorssentinels:block/stripped_cerulii_log",
+    "side": "trevorssentinels:block/stripped_cerulii_log"
+  }
+}

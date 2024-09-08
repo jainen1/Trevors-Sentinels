@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": [{ "model": "trevorssentinels:block/flesh_block", "weight": 8 }, {"model": "trevorssentinels:block/flesh_block2", "weight": 6}]
+  }
+}

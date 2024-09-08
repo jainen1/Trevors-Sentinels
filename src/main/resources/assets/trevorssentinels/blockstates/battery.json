@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "trevorssentinels:block/battery" },
+    "facing=east": { "model": "trevorssentinels:block/battery", "y": 90 },
+    "facing=south": { "model": "trevorssentinels:block/battery", "y": 180 },
+    "facing=west": { "model": "trevorssentinels:block/battery", "y": 270 }
+  }
+}

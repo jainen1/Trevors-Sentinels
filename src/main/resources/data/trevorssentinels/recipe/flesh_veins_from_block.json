@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "trevorssentinels:flesh_block"
+    }
+  ],
+  "result": {
+    "item": "trevorssentinels:flesh_veins",
+    "count": 4
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "trevorssentinels:item/chromatic_lens",
+    "layer1": "trevorssentinels:item/chromatic_lens_overlay"
+  }
+}

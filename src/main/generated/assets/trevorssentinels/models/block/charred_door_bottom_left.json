@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "trevorssentinels:block/charred_door_bottom",
+    "top": "trevorssentinels:block/charred_door_top"
+  }
+}
