@@ -31,9 +31,8 @@ import java.util.List;
 import static net.trevorskullcrafter.item.ModArmorMaterials.*;
 
 public class TSItems implements ItemRegistryContainer {
-	public static <T> T getComponentValue(ItemStack stack, ComponentType<T> type, T fallback) {
-		if(stack.get(type) == null) { stack.applyComponentsFrom(ComponentMap.builder().add(type, fallback).build()); return fallback; }
-		return stack.get(type);
+	public static <T> T getOrSetComponent(ItemStack stack, ComponentType<T> type, T fallback) {
+		if(stack.get(type) == null) { stack.applyComponentsFrom(ComponentMap.builder().add(type, fallback).build()); } return stack.get(type);
 	}
 
 	@RegistryNamespace("trevorssentinels") public static class Tech implements ItemRegistryContainer {
@@ -48,7 +47,7 @@ public class TSItems implements ItemRegistryContainer {
 			new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(SCRAP_METAL_DURABILITY)));
 		public static final Item SCRAP_METAL_SWORD = new SwordItem(ModToolMaterials.SCRAP_METAL,
 			new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SCRAP_METAL, 1, -2.4f)));
-		public static final Item SCRAP_METAL_PHASER = new PhaserItem(new Item.Settings().component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
+		public static final Item SCRAP_METAL_PHASER = new PhaserItem(TextUtil.PURE2, new Item.Settings().component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
 				.attachment_slots(3).projectile_damage(5).projectile_lifetime(60).projectile_inaccuracy(40).projectile_recoil(5).burst_projectiles(1).burst_cooldown(10)
 				.reload_cooldown(50).magazine_size(4).build()));
 		public static final Item SCRAP_METAL_KNIFE = new DaggerItem(ModToolMaterials.SCRAP_METAL, 1, 0, 0.9f, new Item.Settings());
@@ -71,7 +70,7 @@ public class TSItems implements ItemRegistryContainer {
 			new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(STARSTEEL_DURABILITY)));
 		public static final Item INDUSTRIAL_CROWBAR = new SwordItem(ModToolMaterials.STARSTEEL, new Item.Settings()
 			.attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.STARSTEEL, 3, -2.4f)));
-		public static final Item INDUSTRIAL_PHASER = new PhaserItem(new Item.Settings().component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
+		public static final Item INDUSTRIAL_PHASER = new PhaserItem(TextUtil.PURE2, new Item.Settings().component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
 				.attachment_slots(4).projectile_damage(6).projectile_lifetime(7).projectile_inaccuracy(120).projectile_recoil(5).burst_projectiles(3).burst_cooldown(20)
 				.reload_cooldown(100).magazine_size(4).build()));
 		public static final Item INDUSTRIAL_KNIFE = new DaggerItem(ModToolMaterials.STARSTEEL, 3, 1.5f, 0.5f, new Item.Settings());
@@ -104,7 +103,7 @@ public class TSItems implements ItemRegistryContainer {
 			new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(SCRAP_METAL_DURABILITY)));
 		public static final Item STARSTEEL_SWORD = new SwordItem(ModToolMaterials.STARSTEEL, new Item.Settings()
 			.attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.STARSTEEL, 0, -2.4f)));
-		public static final Item STARSTEEL_PHASER = new PhaserItem(new Item.Settings().component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
+		public static final Item STARSTEEL_PHASER = new PhaserItem(TextUtil.PURE, new Item.Settings().component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
 				.attachment_slots(5).projectile_damage(7).projectile_lifetime(60).projectile_inaccuracy(20).projectile_recoil(3).burst_projectiles(1).burst_cooldown(10)
 				.reload_cooldown(50).magazine_size(8).build()));
 		public static final Item STARSTEEL_KNIFE = new DaggerItem(ModToolMaterials.STARSTEEL, 2, 0.5f, 0.3f, new Item.Settings());
@@ -128,7 +127,7 @@ public class TSItems implements ItemRegistryContainer {
 			new Item.Settings().fireproof().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(NUCLEAR_DURABILITY)));
 		public static final Item NUCLEAR_SWORD = new SwordItem(ModToolMaterials.NUCLEAR, new Item.Settings().fireproof()
 			.attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.NUCLEAR, 3, -2.4f)));
-		public static final Item NUCLEAR_PHASER = new PhaserItem(new Item.Settings().component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
+		public static final Item NUCLEAR_PHASER = new PhaserItem(TextUtil.NUCLEAR1, new Item.Settings().component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
 				.attachment_slots(7).projectile_damage(9).projectile_lifetime(60).projectile_inaccuracy(20).projectile_recoil(4).burst_projectiles(1).burst_cooldown(10)
 				.reload_cooldown(50).magazine_size(8).projectile_effects(List.of(new StatusEffectInstance(ModEffects.IRRADIATED, 60))).build()));
 		public static final Item NUCLEAR_VIBROKNIFE = new DaggerItem(ModToolMaterials.NUCLEAR, 1, 2.5f, 0.15f,
@@ -154,9 +153,9 @@ public class TSItems implements ItemRegistryContainer {
 			new Item.Settings().fireproof().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(NANOTECH_DURABILITY)));
 		public static final Item NANOTECH_SWORD = new SwordItem(ModToolMaterials.NANOTECH, new Item.Settings().fireproof()
 			.attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.NANOTECH, 3, -2.4f)));
-		public static final Item NANOTECH_PHASER = new PhaserItem(new Item.Settings().component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
+		public static final Item NANOTECH_PHASER = new PhaserItem(TextUtil.BLOOD_RED, new Item.Settings().component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
 				.attachment_slots(9).projectile_damage(12).projectile_lifetime(60).projectile_inaccuracy(10).projectile_recoil(3).burst_projectiles(1).burst_cooldown(10)
-				.reload_cooldown(50).magazine_size(12).build()));
+				.reload_cooldown(50).magazine_size(12).automatic_reloading(true).build()));
 		public static final Item NANOTECH_VIBROKNIFE = new DaggerItem(ModToolMaterials.NANOTECH, 1, 3f, 0.15f, new Item.Settings().fireproof());
 		public static final Item NANOTECH_DRILL = new PickaxeItem(ModToolMaterials.NANOTECH, new Item.Settings().fireproof()
 			.attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.NANOTECH, 0, 0)));
@@ -181,9 +180,9 @@ public class TSItems implements ItemRegistryContainer {
 			new Item.Settings().fireproof().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(ZENITHIUM_DURABILITY)));
 		public static final Item ZENITHIUM_SWORD = new SwordItem(ModToolMaterials.ZENITHIUM, new Item.Settings().fireproof()
 			.attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ZENITHIUM, 3, -2.4f)));
-		public static final Item ZENITHIUM_PHASER = new PhaserItem(new Item.Settings().component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
+		public static final Item ZENITHIUM_PHASER = new PhaserItem(TextUtil.SENTINEL_GOLD1, new Item.Settings().component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
 				.attachment_slots(9).projectile_damage(16).projectile_lifetime(60).projectile_inaccuracy(2).projectile_recoil(2).burst_projectiles(1).burst_cooldown(10)
-				.reload_cooldown(50).magazine_size(16).build()));
+				.reload_cooldown(50).magazine_size(16).automatic_reloading(true).build()));
 		public static final Item ZENITHIUM_DAGGER = new DaggerItem(ModToolMaterials.ZENITHIUM, 1, 4f, 0, new Item.Settings().fireproof());
 		public static final Item ZENITHIUM_PICKAXE = new PickaxeItem(ModToolMaterials.ZENITHIUM, new Item.Settings().fireproof()
 			.attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.ZENITHIUM, 1, -2.8f)));
@@ -229,7 +228,7 @@ public class TSItems implements ItemRegistryContainer {
 			.component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
 				.projectile_effects(List.of(new StatusEffectInstance(StatusEffects.REGENERATION, 40, 1))).isAttachment().build()));
 
-		public static final Item VILE_SPITTER = new LivingPhaserItem(new Item.Settings().component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
+		public static final Item VILE_SPITTER = new LivingPhaserItem(TextUtil.FLESH_PUS, new Item.Settings().component(ModDataComponentTypes.PHASER_MODIFIERS, new PhaserModifiersComponent.Builder()
 				.attachment_slots(5).magazine_size(7).projectile_damage(8).projectile_lifetime(48).projectile_inaccuracy(40).projectile_recoil(3).burst_projectiles(1).burst_cooldown(10)
 				.reload_cooldown(60).projectile_effects(List.of(new StatusEffectInstance(ModEffects.INFESTED, 60))).build()));
 

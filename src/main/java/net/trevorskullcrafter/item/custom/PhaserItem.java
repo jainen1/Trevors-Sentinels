@@ -39,7 +39,7 @@ import java.util.List;
 import static net.trevorskullcrafter.item.PhaserModifiersComponent.*;
 
 public class PhaserItem extends Item implements StyleUtil.StyleSwitchable, Reloadable, FuelableItem, ExtendedTooltipItem {
-	public PhaserItem(Settings settings){ super(settings.maxCount(1).component(ModDataComponentTypes.MAX_STYLE, 2)); }
+	public PhaserItem(Color defaultPhaseColor, Settings settings){ super(settings.maxCount(1)); this.defaultPhaseColor = defaultPhaseColor; } private final Color defaultPhaseColor;
 
 	public static ItemStack getCustomPhaser(ItemStack phaser, Text name, Color skinColor, Color lensColor, ItemStack... attachments){
 		if(name != null) { phaser.applyComponentsFrom(ComponentMap.builder().add(DataComponentTypes.CUSTOM_NAME, name).build()); }
@@ -89,7 +89,9 @@ public class PhaserItem extends Item implements StyleUtil.StyleSwitchable, Reloa
 						.projectile_effects(projectile_effects).build();
 				phaser.applyComponentsFrom(ComponentMap.builder().add(ModDataComponentTypes.PHASER_MODIFIERS, tempModifiers).build());
 			}
-		} setToNeedReload(phaser, true);
+		}
+		if(phaserModifiers.automatic_reloading()) { phaser.applyComponentsFrom(ComponentMap.builder().add(ModDataComponentTypes.MAX_STYLE, 2).build()); }
+		phaser.set(ModDataComponentTypes.PHASER_LOCK, true);
 		return phaser;
 	}
 
@@ -98,7 +100,7 @@ public class PhaserItem extends Item implements StyleUtil.StyleSwitchable, Reloa
 	@Override public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand){
 		ItemStack stack = user.getStackInHand(hand);
 		if(stack.get(ModDataComponentTypes.COOLDOWN) == null) { shoot(world, stack, user); }
-		if(stack.getItem() instanceof PhaserItem phaser && phaser.getFuel(stack) == 0){ setToNeedReload(stack, true); }
+		if(stack.getItem() instanceof PhaserItem phaser && phaser.getFuel(stack) == 0){ stack.set(ModDataComponentTypes.PHASER_LOCK, true); }
 		return super.use(world, user, hand);
     }
 
@@ -128,7 +130,7 @@ public class PhaserItem extends Item implements StyleUtil.StyleSwitchable, Reloa
     @Override public void reload(ItemStack stack, World world, Entity user) {
         if(world instanceof ServerWorld) {
 			PhaserModifiersComponent modifiers = stack.get(ModDataComponentTypes.PHASER_MODIFIERS); if(modifiers != null && getFuel(stack) > 0 && needsReload(stack)){
-				setToNeedReload(stack, false);
+				stack.set(ModDataComponentTypes.PHASER_LOCK, false);
 				//triggerAnim(user, GeoItem.getOrAssignId(stack, serverWorld), "reloadController", "reload");
 				world.playSoundFromEntity(null, user, getReloadSound(modifiers.getType()), SoundCategory.PLAYERS, 3, 0);
 				stack.set(ModDataComponentTypes.COOLDOWN, new CooldownComponent(modifiers.reload_cooldown()));
@@ -137,11 +139,11 @@ public class PhaserItem extends Item implements StyleUtil.StyleSwitchable, Reloa
     }
 
 	@Override public boolean addFuel(ItemStack stack, ItemStack otherStack, Entity entity) {
-		boolean result = FuelableItem.super.addFuel(stack, otherStack, entity); if(result) { setToNeedReload(stack, true); } return result;
+		boolean result = FuelableItem.super.addFuel(stack, otherStack, entity); if(result) { stack.set(ModDataComponentTypes.PHASER_LOCK, true); } return result;
 	}
 
 	@Override public Optional<ItemStack> removeFuel(ItemStack stack, Entity entity) {
-		Optional<ItemStack> result = FuelableItem.super.removeFuel(stack, entity); if(result.isPresent()) { setToNeedReload(stack, true); } return result;
+		Optional<ItemStack> result = FuelableItem.super.removeFuel(stack, entity); if(result.isPresent()) { stack.set(ModDataComponentTypes.PHASER_LOCK, true); } return result;
 	}
 
 	@Override public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
@@ -153,7 +155,7 @@ public class PhaserItem extends Item implements StyleUtil.StyleSwitchable, Reloa
 			tooltip.add(Text.empty().append(Text.literal("☄ "+ modifiers.burst_projectiles()).formatted(TextUtil.formattingFromQuotient(modifiers.burst_projectiles(), 5)))
 					.append(column).append(Text.literal(modifiers.projectile_damage() < 1? "❤ " : "☠ " + Math.abs(modifiers.projectile_damage()))
 							.formatted(TextUtil.formattingFromQuotient(Math.abs(modifiers.projectile_damage()), 20))).append(column)
-					.append(Text.literal("\uD83D\uDD25 "+ firingRateString).formatted(TextUtil.formattingFromQuotient(firingRate, 5))));
+					.append(Text.literal("\uD83D\uDD25 " + firingRateString + "/s").formatted(TextUtil.formattingFromQuotient(firingRate, 5))));
 
 			MutableText text = Text.empty();
 			int availableSlots = modifiers.attachment_slots();
@@ -184,8 +186,9 @@ public class PhaserItem extends Item implements StyleUtil.StyleSwitchable, Reloa
 
 	@Override public Text fuelText(ItemStack stack) {
 		MutableText fuel = Text.empty().append(FuelableItem.super.fuelText(stack));
-		if(getStyles(stack) > 1) { fuel.append(Text.literal("△").formatted(TSItems.getComponentValue(stack, ModDataComponentTypes.STYLE, 1) == 1? Formatting.RED : Formatting.GREEN)); }
-		return fuel;
+		if(TSItems.getOrSetComponent(stack, ModDataComponentTypes.MAX_STYLE, 1) > 1) {
+			fuel.append(Text.literal("△").formatted(TSItems.getOrSetComponent(stack, ModDataComponentTypes.STYLE, 1) == 1? Formatting.RED : Formatting.GREEN));
+		} return fuel;
 	}
 
 	@Override public List<Text> longText(ItemStack stack) {
@@ -239,8 +242,11 @@ public class PhaserItem extends Item implements StyleUtil.StyleSwitchable, Reloa
 		default -> ModSounds.PISTOL_RELOAD; };
 	}
 
-	public static void setToNeedReload(ItemStack stack, boolean value) { stack.set(ModDataComponentTypes.PHASER_LOCK, value); }
-	public boolean needsReload(ItemStack stack) { return Objects.requireNonNullElse(stack.get(ModDataComponentTypes.PHASER_LOCK), false); }
+	public boolean needsReload(ItemStack stack) {
+		Boolean locked = stack.get(ModDataComponentTypes.PHASER_LOCK);
+		if(locked == null) { stack.set(ModDataComponentTypes.PHASER_LOCK, true); return true; }
+		return locked;
+	}
 
 	public Color getComponentColor(ItemStack stack, int i, Color fallback){
 		ContainerComponent container = stack.get(DataComponentTypes.CONTAINER);
@@ -248,7 +254,7 @@ public class PhaserItem extends Item implements StyleUtil.StyleSwitchable, Reloa
 		return new Color(DyedColorComponent.getColor(container.stream().toList().get(i), fallback.getRGB()));
 	}
 	public Color getDecalColor(ItemStack stack) { return getComponentColor(stack, 0, TextUtil.WHITE); }
-	public Color getProjectileColor(ItemStack stack) { return getComponentColor(stack, 1, TextUtil.PURE); }
+	public Color getProjectileColor(ItemStack stack) { return getComponentColor(stack, 1, defaultPhaseColor); }
 	@Override public int getMaxFuel(ItemStack stack) {
 		PhaserModifiersComponent modifiers = stack.get(ModDataComponentTypes.PHASER_MODIFIERS);
 		if(modifiers == null) { return 6; }
@@ -262,7 +268,7 @@ public class PhaserItem extends Item implements StyleUtil.StyleSwitchable, Reloa
 	@Override public Text getCurrentStyleTranslation(ItemStack stack) { return Text.translatable("style.item."+ TrevorsSentinels.MOD_ID + ".phaser." + stack.get(ModDataComponentTypes.STYLE)); }
 	@Override public boolean showStyleSwitchTooltip(ItemStack stack) { return false; }
 	@Override public Formatting getStyleSwitchFormatting(ItemStack stack){
-		return TSItems.getComponentValue(stack, ModDataComponentTypes.STYLE, 1) == 1? Formatting.RED : Formatting.GREEN;
+		return TSItems.getOrSetComponent(stack, ModDataComponentTypes.STYLE, 1) == 1? Formatting.RED : Formatting.GREEN;
 	}
     @Override public SoundEvent getSwitchSoundEvent(ItemStack stack) { return SoundEvents.UI_BUTTON_CLICK.value(); }
     @Override public float getSwitchSoundPitch(ItemStack stack) { return 1.5f; }

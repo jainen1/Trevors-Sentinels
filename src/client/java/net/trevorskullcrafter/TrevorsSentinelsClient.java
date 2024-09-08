@@ -119,10 +119,13 @@ public class TrevorsSentinelsClient implements ClientModInitializer {
 				if(Screen.hasShiftDown()){ lines.add(1, fuelableItem.longFuelText(stack)); }
 				else { lines.add(1, fuelableItem.shortFuelText(stack)); }
 			}
-			if(item instanceof StyleUtil.StyleSwitchable switchable) {
-				if(switchable.showStyleSwitchTooltip(stack)) { lines.add(Text.empty().append(StyleUtil.style).append(switchable.getCurrentStyleTranslation(stack)).formatted(switchable.getStyleSwitchFormatting(stack))); }
-				lines.add(Text.literal(style_switch.getBoundKeyLocalizedText().getString().toUpperCase().formatted(Formatting.YELLOW))
-						.append(Text.translatable("tooltip.trevorssentinels.style_switch." + StyleUtil.StyleSwitchable.getStyle(stack)).formatted(Formatting.DARK_GRAY))); }
+			if(item instanceof StyleUtil.StyleSwitchable switchable && TSItems.getOrSetComponent(stack, ModDataComponentTypes.MAX_STYLE, 1) > 1) {
+				if(switchable.showStyleSwitchTooltip(stack)) {
+					lines.add(Text.empty().append(StyleUtil.style).append(switchable.getCurrentStyleTranslation(stack)).formatted(switchable.getStyleSwitchFormatting(stack)));
+				}
+				lines.add(Text.empty().append(Text.literal(style_switch.getBoundKeyLocalizedText().getString().toUpperCase()).formatted(Formatting.YELLOW))
+						.append(Text.translatable("tooltip.trevorssentinels.style_switch").formatted(Formatting.DARK_GRAY)));
+			}
 			PortkeyComponent portkey = stack.get(ModDataComponentTypes.PORTKEY);
 			if(portkey != null) {
 				if(portkey.active()){
@@ -157,7 +160,8 @@ public class TrevorsSentinelsClient implements ClientModInitializer {
 
 		LOGGER.info("Registering model predicates... ("+ MOD_ID + ")");
 		ModelPredicateProviderRegistry.register(TSItems.Beta.PAPPYM_BLADE, Identifier.of(MOD_ID, "model"), (stack, world, entity, seed) -> {
-			if (StyleUtil.StyleSwitchable.getStyle(stack) == 1 || StyleUtil.StyleSwitchable.getStyle(stack) == 3) return 0.2f; return 0f;
+			int style = TSItems.getOrSetComponent(stack, ModDataComponentTypes.STYLE, 1);
+			if ((style % 2) == 0) {  return 0f; } return 0.2f;
 		});
 
 		ModelPredicateProviderRegistry.register(TSItems.Tech.LIFEFORM_TRACER, Identifier.of(MOD_ID, "model"), (stack, world, entity, seed) -> {

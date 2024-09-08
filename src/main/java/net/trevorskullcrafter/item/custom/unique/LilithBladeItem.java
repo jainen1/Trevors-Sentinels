@@ -16,6 +16,8 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import net.trevorskullcrafter.item.ModDataComponentTypes;
+import net.trevorskullcrafter.item.TSItems;
 import net.trevorskullcrafter.item.custom.PillarAligned;
 import net.trevorskullcrafter.util.Pillars;
 import net.trevorskullcrafter.util.StyleUtil;
@@ -23,21 +25,21 @@ import net.trevorskullcrafter.util.StyleUtil;
 import java.util.List;
 
 public class LilithBladeItem extends SwordItem implements StyleUtil.StyleSwitchable, PillarAligned {
-    public LilithBladeItem(ToolMaterial toolMaterial, Settings settings) { super(toolMaterial, settings); }
+    public LilithBladeItem(ToolMaterial toolMaterial, Settings settings) { super(toolMaterial, settings.component(ModDataComponentTypes.MAX_STYLE, 2)); }
 
     @Override public Formatting getStyleSwitchFormatting(ItemStack stack) {
-        return StyleUtil.StyleSwitchable.getStyle(stack) == 2? Formatting.RED : Formatting.YELLOW;
+        return TSItems.getOrSetComponent(stack, ModDataComponentTypes.STYLE, 1) == 2? Formatting.RED : Formatting.YELLOW;
     }
 
     @Override public Pillars.Pillar getPillar(ItemStack stack) {
-        if(StyleUtil.StyleSwitchable.getStyle(stack) == 1){ return Pillars.ONODE; }
+        if(TSItems.getOrSetComponent(stack, ModDataComponentTypes.STYLE, 1) == 1){ return Pillars.ONODE; }
         else { return Pillars.POWER; }
     }
 
     @Override public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
         if (world instanceof ServerWorld serverWorld && hand == Hand.MAIN_HAND) {
-            if(StyleUtil.StyleSwitchable.getStyle(stack) == 2){
+            if(TSItems.getOrSetComponent(stack, ModDataComponentTypes.STYLE, 1) == 2){
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH,200,1,false,true,false));
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED,200,2,false,false,false));
                 user.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE,200,255,false,false,false));
@@ -48,13 +50,13 @@ public class LilithBladeItem extends SwordItem implements StyleUtil.StyleSwitcha
     }
 
     @Override public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if(StyleUtil.StyleSwitchable.getStyle(stack) == 1) target.addStatusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH,1,3,false,false,false));
+        if(TSItems.getOrSetComponent(stack, ModDataComponentTypes.STYLE, 1) == 1) target.addStatusEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH,1,3,false,false,false));
         else target.addStatusEffect(new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE,1,3,false,false,false));
         return true;
     }
 
 	@Override public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType config) {
-        if (StyleUtil.StyleSwitchable.getStyle(stack) == 1)  tooltip.add(Text.literal("Hits heal those blessed by the sun!").formatted(Formatting.GOLD));
+        if (TSItems.getOrSetComponent(stack, ModDataComponentTypes.STYLE, 1) == 1)  tooltip.add(Text.literal("Hits heal those blessed by the sun!").formatted(Formatting.GOLD));
 		else {
 			tooltip.add(Text.literal("Hits deal a huge amount of damage.").formatted(Formatting.GOLD));
 			tooltip.add(Text.literal("Right click to channel your rage.").formatted(Formatting.DARK_RED));
@@ -62,5 +64,5 @@ public class LilithBladeItem extends SwordItem implements StyleUtil.StyleSwitcha
 		super.appendTooltip(stack, context, tooltip, config);
 	}
 
-    @Override public boolean hasGlint(ItemStack stack){ return StyleUtil.StyleSwitchable.getStyle(stack) == 2; }
+    @Override public boolean hasGlint(ItemStack stack){ return TSItems.getOrSetComponent(stack, ModDataComponentTypes.STYLE, 1) == 2; }
 }

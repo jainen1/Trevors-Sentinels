@@ -717,8 +717,7 @@ public class EN_US_Generator extends OwoLanguageProvider {
 		translationBuilder.add(new Translation("tooltip." + MOD_ID + ".set_bonus_inactive").text("Set bonus inactive!"));
         translationBuilder.add(new Translation("tooltip." + MOD_ID + ".style").text("Style: "));
         translationBuilder.add(new Translation("tooltip." + MOD_ID + ".mode").text("Mode: "));
-        translationBuilder.addNumbered(new Translation("tooltip." + MOD_ID + ".style_switch."),
-			new Translation().text(" to switch style."), new Translation().text(" to cycle modes."));
+        translationBuilder.add(new Translation("tooltip." + MOD_ID + ".style_switch").text(" to switch style"));
         translationBuilder.addNumbered(new Translation("style.item." + MOD_ID + ".pappym_blade."),
 			new Translation().text("Trickster"), new Translation().text("Paladin"), new Translation().text("Predator"), new Translation().text("Guardian"));
         translationBuilder.addNumbered(new Translation("style.item." + MOD_ID + ".thanatu_blade."),

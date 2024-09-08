@@ -44,7 +44,7 @@ public class TSBlocks implements BlockRegistryContainer {
 		public static final Block SCRAP_BARREL = new BarrelBlock(Block.Settings.copy(SCRAP_METAL_BLOCK));
 
 		public static final Block STARSTEEL_BLOCK = new Block(Block.Settings.create().strength(6f,8f)
-			.mapColor(MapColor.STONE_GRAY).sounds(ModSounds.STEEL_SOUNDS).requiresTool().instrument(NoteBlockInstrument.SNARE));
+			.mapColor(MapColor.STONE_GRAY).sounds(BlockSoundGroup.COPPER_GRATE).requiresTool().instrument(NoteBlockInstrument.SNARE));
 		public static final Block CHISELED_STARSTEEL_BLOCK = new PillarBlock(Block.Settings.copy(STARSTEEL_BLOCK));
 		public static final Block STAINLESS_STARSTEEL_BLOCK = new Block(Block.Settings.copy(STARSTEEL_BLOCK));
 		public static final Block STARSTEEL_LAMP = new ToggleableLampBlock(Block.Settings.copy(STARSTEEL_BLOCK)
@@ -55,7 +55,7 @@ public class TSBlocks implements BlockRegistryContainer {
 		public static final Block FUSEBOX = new DirectionalBlock(Block.Settings.copy(STARSTEEL_BLOCK));
 		public static final Block STARSTEEL_REPULSOR = new Block(Block.Settings.copy(STARSTEEL_BLOCK).slipperiness(/*1.098*/1.2f).mapColor(MapColor.LIGHT_BLUE));
 		public static final Block STARSTEEL_LADDER = new LadderBlock(Block.Settings.copy(Blocks.LADDER).nonOpaque()
-			.sounds(ModSounds.STEEL_SOUNDS).strength(6f, 8f).requiresTool());
+			.sounds(BlockSoundGroup.COPPER_GRATE).strength(6f, 8f).requiresTool());
 
 		public static final Identifier STARSTEEL_SIGN_TEXTURE = Identifier.of(MOD_ID, "entity/signs/starsteel");
 		public static final Identifier STARSTEEL_HANGING_SIGN_TEXTURE = Identifier.of(MOD_ID, "entity/signs/hanging/starsteel");
@@ -131,11 +131,11 @@ public class TSBlocks implements BlockRegistryContainer {
 		public static final Block ORANGE_AGILITY_BLOCK = new FallDamagelessBlock(0.0f, Block.Settings.copy(CHAMBER_BLOCK).mapColor(MapColor.ORANGE)
 			.sounds(BlockSoundGroup.SLIME).velocityMultiplier(1.4f).slipperiness(0.75f));
 		@Fireproof public static final Block RECONSTRUCTION_TABLE = new ReconstructionTableBlock(Block.Settings.create()
-				.sounds(ModSounds.STEEL_SOUNDS).mapColor(MapColor.DARK_AQUA).strength(35f,1200f).nonOpaque().requiresTool());
+				.sounds(BlockSoundGroup.COPPER_GRATE).mapColor(MapColor.DARK_AQUA).strength(35f,1200f).nonOpaque().requiresTool());
 		public static final Block MODIFICATION_TABLE = new ModificationTableBlock(Block.Settings.create()
-			.sounds(ModSounds.STEEL_SOUNDS).mapColor(MapColor.DARK_AQUA).strength(35f,1200f).nonOpaque().requiresTool());
+			.sounds(BlockSoundGroup.COPPER_GRATE).mapColor(MapColor.DARK_AQUA).strength(35f,1200f).nonOpaque().requiresTool());
 
-		public static final Block PHASEPLATE = new PhaseplateBlock(Block.Settings.copy(CHAMBER_BLOCK));
+		public static final Block PHASEPLATE = new PhaseplateBlock(Block.Settings.create().strength(2f, 4f).sounds(BlockSoundGroup.COPPER));
 
 		@Fireproof public static final Block NUCLEAR_BLOCK = new Block(Block.Settings.create().sounds(BlockSoundGroup.AMETHYST_BLOCK).strength(20f,1200f)
 			.mapColor(MapColor.EMERALD_GREEN).requiresTool());

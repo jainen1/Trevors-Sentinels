@@ -8,7 +8,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.trevorskullcrafter.item.ModDataComponentTypes;
-import net.trevorskullcrafter.item.TSItems;
 
 import static net.trevorskullcrafter.util.TextUtil.*;
 
@@ -20,9 +19,6 @@ public class StyleUtil {
         default SoundEvent getSwitchSoundEvent(ItemStack stack){ return SoundEvents.BLOCK_END_PORTAL_FRAME_FILL; }
         default float getSwitchSoundVolume(ItemStack stack){ return 1.0f; }
         default float getSwitchSoundPitch(ItemStack stack){ return 1.2F; }
-
-		static int getStyle(ItemStack stack) { return TSItems.getComponentValue(stack, ModDataComponentTypes.STYLE, 0); }
-		default int getStyles(ItemStack stack) { return TSItems.getComponentValue(stack, ModDataComponentTypes.MAX_STYLE, getStyle(stack)); }
 
         default Formatting getStyleSwitchFormatting(ItemStack stack){ return Formatting.GRAY; }
         default Text getSwitchMessagePrefix(ItemStack stack) { return StyleUtil.style; }

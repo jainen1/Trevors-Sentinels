@@ -81,7 +81,7 @@ public interface FuelableItem {
 			.append(((FuelableItem) stack.getItem()).fuelText(stack)).append((Text.literal(" (Charge with ")).append(getFuelItem().getName()).append(Text.literal(")")).formatted(Formatting.ITALIC, Formatting.GOLD)); }
 
 	default Item getFuelItem(){ return TSItems.Tech.PLASMA_CELL; }
-	default int getFuel(ItemStack stack) { return TSItems.getComponentValue(stack, ModDataComponentTypes.FUEL, 0); }
-	default int getMaxFuel(ItemStack stack) { return TSItems.getComponentValue(stack, ModDataComponentTypes.MAX_FUEL, 6); }
+	default int getFuel(ItemStack stack) { return TSItems.getOrSetComponent(stack, ModDataComponentTypes.FUEL, 0); }
+	default int getMaxFuel(ItemStack stack) { return TSItems.getOrSetComponent(stack, ModDataComponentTypes.MAX_FUEL, 6); }
 	default void playFuelSound(Entity entity) { entity.playSound(SoundEvents.BLOCK_CHAIN_PLACE, 1f, 2f + entity.getWorld().getRandom().nextFloat() * 0.4F); }
 }

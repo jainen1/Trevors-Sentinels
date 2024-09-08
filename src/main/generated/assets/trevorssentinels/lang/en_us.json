@@ -4804,6 +4804,12 @@
       "text": "r"
     }
   ],
+  "item.trevorssentinels.custom_phaser.bfg": [
+    {
+      "color": "#d90012",
+      "text": "The Dark Angels' Symphony"
+    }
+  ],
   "item.trevorssentinels.custom_phaser.comet": [
     {
       "color": "#797979",
@@ -11696,14 +11702,9 @@
       "text": "Style: "
     }
   ],
-  "tooltip.trevorssentinels.style_switch.1": [
+  "tooltip.trevorssentinels.style_switch": [
     {
-      "text": "1"
-    }
-  ],
-  "tooltip.trevorssentinels.style_switch.2": [
-    {
-      "text": "2"
+      "text": " to switch style."
     }
   ],
   "tooltip.trevorssentinels.teleported": [

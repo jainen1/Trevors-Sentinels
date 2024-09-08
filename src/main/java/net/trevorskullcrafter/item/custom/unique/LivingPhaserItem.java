@@ -14,7 +14,7 @@ import net.trevorskullcrafter.util.TextUtil;
 import java.awt.*;
 
 public class LivingPhaserItem extends PhaserItem {
-	public LivingPhaserItem(Item.Settings settings) { super(settings); }
+	public LivingPhaserItem(Color defaultPhaseColor, Settings settings) { super(defaultPhaseColor, settings); }
 
 	@Override public Item getFuelItem() { return TSItems.Tech.MEAT_PELLET; }
 	@Override public Color getProjectileColor(ItemStack stack) { return TextUtil.FLESH_PUS; }
