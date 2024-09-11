@@ -171,7 +171,7 @@ public class SentinelEntity extends HostileEntity implements Angerable, Monster,
 			double xDistance = target.getX() - this.getX();
 			double yDistance = target.getEyeY() - projectile.getY();
 			double zDistance = target.getZ() - this.getZ();
-			projectile.setVelocity(xDistance, yDistance, zDistance, 1.5F, (float)(14 - this.getWorld().getDifficulty().getId() * 4));
+			projectile.setVelocity(xDistance, yDistance, zDistance, 1.8F, (float)(14 - this.getWorld().getDifficulty().getId() * 4));
 
 			//double e = target.getBodyY(0.3333333333333333) - projectile.getY();
 			//double horizontalDistance = Math.sqrt(xDistance * xDistance + zDistance * zDistance);

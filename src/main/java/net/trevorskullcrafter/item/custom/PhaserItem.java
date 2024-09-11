@@ -65,11 +65,10 @@ public class PhaserItem extends Item implements StyleUtil.StyleSwitchable, Reloa
 
 		ContainerComponent container = phaser.get(DataComponentTypes.CONTAINER);
 		if(container == null){ container = ContainerComponent.fromStacks(new ArrayList<>()); }
-		ItemStack[] attachments = container.stream().toList().toArray(new ItemStack[0]);
 
 		int remainingSlots = phaserModifiers.attachment_slots();
-		for(int i = 2; i < attachments.length; i++){
-			PhaserModifiersComponent attachmentModifiers = attachments[i].get(ModDataComponentTypes.PHASER_MODIFIERS);
+		for(ItemStack attachment : container.stream().skip(2).toList().toArray(new ItemStack[0])){
+			PhaserModifiersComponent attachmentModifiers = attachment.get(ModDataComponentTypes.PHASER_MODIFIERS);
 			if(attachmentModifiers != null && attachmentModifiers.isAttachment() && attachmentModifiers.attachment_slots() <= remainingSlots){
 				remainingSlots -= attachmentModifiers.attachment_slots();
 				List<StatusEffectInstance> projectile_effects = new ArrayList<>(phaserModifiers.projectile_effects());
@@ -112,7 +111,7 @@ public class PhaserItem extends Item implements StyleUtil.StyleSwitchable, Reloa
 					PhaserProjectileEntity projectile = new PhaserProjectileEntity(ModEntities.PHASER_PROJECTILE, world, user, modifiers.projectile_lifetime(), modifiers.projectile_damage(),
 							getProjectileColor(stack).getRGB(), modifiers.projectile_effects());
 					if(world instanceof ServerWorld){
-						projectile.setVelocity(user.getPitch(), user.getYaw(), 0.0F, 1.5f, modifiers.projectile_inaccuracy() / 10f);
+						projectile.setVelocity(user.getPitch(), user.getYaw(), 0.0F, 1.8f, modifiers.projectile_inaccuracy() / 10f);
 						world.spawnEntity(projectile);
 					}
 					user.setPitch(user.getPitch()+user.getRandom().nextBetween(-modifiers.projectile_recoil(), modifiers.projectile_recoil()));
@@ -147,28 +146,27 @@ public class PhaserItem extends Item implements StyleUtil.StyleSwitchable, Reloa
 	}
 
 	@Override public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-		PhaserModifiersComponent modifiers = stack.get(ModDataComponentTypes.PHASER_MODIFIERS);
-		if(modifiers != null){
-			double firingRate = (20.0 / (modifiers.burst_cooldown() +1)) * modifiers.burst_projectiles();
-			String firingRateString = new DecimalFormat("#.#").format(firingRate);
+		PhaserModifiersComponent phaserModifiers = stack.get(ModDataComponentTypes.PHASER_MODIFIERS);
+		if(phaserModifiers != null){
+			double firingRate = (20.0 / (phaserModifiers.burst_cooldown() +1)) * phaserModifiers.burst_projectiles();
 			Text column = Text.literal(" | ").formatted(Formatting.DARK_GRAY);
-			tooltip.add(Text.empty().append(Text.literal("☄ "+ modifiers.burst_projectiles()).formatted(TextUtil.formattingFromQuotient(modifiers.burst_projectiles(), 5)))
-					.append(column).append(Text.literal(modifiers.projectile_damage() < 1? "❤ " : "☠ " + Math.abs(modifiers.projectile_damage()))
-							.formatted(TextUtil.formattingFromQuotient(Math.abs(modifiers.projectile_damage()), 20))).append(column)
-					.append(Text.literal("\uD83D\uDD25 " + firingRateString + "/s").formatted(TextUtil.formattingFromQuotient(firingRate, 5))));
+			tooltip.add(Text.empty().append(Text.literal("☄ "+ phaserModifiers.burst_projectiles()).formatted(TextUtil.formattingFromQuotient(phaserModifiers.burst_projectiles(), 5)))
+					.append(column).append(Text.literal(phaserModifiers.projectile_damage() < 1? "❤ " : "☠ " + Math.abs(phaserModifiers.projectile_damage()))
+							.formatted(TextUtil.formattingFromQuotient(Math.abs(phaserModifiers.projectile_damage()), 20))).append(column)
+					.append(Text.literal("\uD83D\uDD25 " + new DecimalFormat("#.#").format(firingRate) + "/s").formatted(TextUtil.formattingFromQuotient(firingRate, 5))));
 
 			MutableText text = Text.empty();
-			int availableSlots = modifiers.attachment_slots();
+			int availableSlots = phaserModifiers.attachment_slots();
 
 			ContainerComponent container = stack.get(DataComponentTypes.CONTAINER);
 			if(container == null){ container = ContainerComponent.fromStacks(new ArrayList<>()); }
-			ItemStack[] attachments = container.stream().toList().toArray(new ItemStack[0]);
-
 			Color color = TextUtil.RED;
-			for (int i = 2; i < attachments.length; i++) {
-				PhaserModifiersComponent attachmentModifiers = attachments[i].get(ModDataComponentTypes.PHASER_MODIFIERS);
+
+			for(ItemStack attachment : container.stream().skip(2).toList().toArray(new ItemStack[0])){
+				PhaserModifiersComponent attachmentModifiers = attachment.get(ModDataComponentTypes.PHASER_MODIFIERS);
 				if (attachmentModifiers != null && attachmentModifiers.isAttachment() && attachmentModifiers.attachment_slots() <= availableSlots) {
 					for (int j = attachmentModifiers.attachment_slots(); j >= 0; j--) { text.append(TextUtil.coloredText(Text.literal("◆ "), color)); }
+
 					if (color == TextUtil.RED) { color = TextUtil.GOLD; }
 					else if (color == TextUtil.GOLD) { color = TextUtil.YELLOW; }
 					else if (color == TextUtil.YELLOW) { color = TextUtil.GREEN; }
@@ -179,7 +177,9 @@ public class PhaserItem extends Item implements StyleUtil.StyleSwitchable, Reloa
 					availableSlots -= attachmentModifiers.attachment_slots();
 				}
 			}
+
 			for (int i = availableSlots; i >= 0; i--) { text.append(Text.literal("◇ ").formatted(Formatting.GRAY)); }
+			tooltip.add(Text.literal("Used Slots: " + (phaserModifiers.attachment_slots() - availableSlots) + " / " + phaserModifiers.attachment_slots()));
 			tooltip.add(text);
 		} super.appendTooltip(stack, context, tooltip, type);
 	}

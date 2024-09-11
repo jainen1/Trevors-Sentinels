@@ -199,7 +199,7 @@ public class TrevorsSentinels implements ModInitializer {
 			entries.add(PhaserItem.getCustomPhaser(new ItemStack(TSItems.Tech.STARSTEEL_PHASER), Text.translatable("item.trevorssentinels.custom_phaser.lunar"), TextUtil.SENTINEL_GOLD1, TextUtil.NUCLEAR1,
 					new ItemStack(TSItems.Tech.PHASE_ASSIMILATOR), new ItemStack(TSItems.Tech.AUXILIARY_PLASMA_CHAMBER), new ItemStack(TSItems.Tech.AUXILIARY_PLASMA_CHAMBER)));
 			entries.add(TSItems.Tech.NUCLEAR_PHASER);
-			entries.add(PhaserItem.getCustomPhaser(new ItemStack(TSItems.Tech.NUCLEAR_PHASER), Text.translatable("item.trevorssentinels.custom_phaser.pandemic"), TextUtil.NUCLEAR2, TextUtil.NUCLEAR3,
+			entries.add(PhaserItem.getCustomPhaser(new ItemStack(TSItems.Tech.NUCLEAR_PHASER), Text.translatable("item.trevorssentinels.custom_phaser.pandemic"), TextUtil.SKULLWEED, TextUtil.NUCLEAR1,
 					new ItemStack(TSItems.Tech.POISON_CAPSULE), new ItemStack(TSItems.Tech.AUXILIARY_PLASMA_CHAMBER), new ItemStack(TSItems.Tech.AUXILIARY_PLASMA_CHAMBER),
 					new ItemStack(TSItems.Tech.WITHER_CAPSULE), new ItemStack(TSItems.Tech.ADVANCED_BREECH_MECHANISM)));
 			entries.add(TSItems.Tech.NANOTECH_PHASER);

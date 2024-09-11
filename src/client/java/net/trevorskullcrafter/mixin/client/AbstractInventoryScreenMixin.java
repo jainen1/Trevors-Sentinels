@@ -1,23 +1,16 @@
 package net.trevorskullcrafter.mixin.client;
 
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.AbstractInventoryScreen;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.*;
-import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.*;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Optional;
 
 
 @Mixin(AbstractInventoryScreen.class)
@@ -52,6 +45,8 @@ public class AbstractInventoryScreenMixin<T extends ScreenHandler> extends Handl
     //            Optional.of(new HoverEvent(HoverEvent.Action.SHOW_TEXT, Text.literal("test"))), Optional.empty(), Optional.empty()));
     //}
 
-    //@ModifyConstant(method = "drawStatusEffectBackgrounds", constant = @Constant(ordinal = 1))
-    //private int extendBackgroundLarge(int constant){ return constant + 10; }
+    @WrapOperation(method = "drawStatusEffectBackgrounds", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawGuiTexture(Lnet/minecraft/util/Identifier;IIII)V"))
+    private void extendBackgroundLarge(DrawContext instance, Identifier texture, int x, int y, int width, int height, Operation<Void> original){
+        original.call(instance, texture, x, y, width, height);
+    }
 }

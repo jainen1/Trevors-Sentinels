@@ -134,7 +134,7 @@ public class PhaserProjectileEntity extends ThrownEntity {
         this.discard();
     }
 
-	@Override public boolean hasNoGravity() { return true; }
+    @Override public boolean hasNoGravity() { return true; }
     @Override protected void initDataTracker(DataTracker.Builder builder) {
 		builder.add(COLOR, TextUtil.BLOOD_RED.getRGB());
 		builder.add(LIFETIME, 20);
